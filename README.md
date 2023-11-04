@@ -1,2 +1,2 @@
 # ZodiacSphere
--astrology app for practicing web dev
+--> astrology app for practicing web dev
