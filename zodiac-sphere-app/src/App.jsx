@@ -1,10 +1,37 @@
-import React from 'react';
-import Header from './Header'; 
+import React from "react";
+import { ChakraProvider, Box } from "@chakra-ui/react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./Navbar";
+import Home from "./pages/Home";
+import FindYourSign from "./pages/FindYourSign";
+import AboutYourSign from "./pages/AboutYourSign";
+import Compatibility from "./pages/Compatibility";
+
 function App() {
   return (
-    <div className="App">
-      <Header /> 
-    </div>
+    <ChakraProvider>
+      <Router>
+      <Navbar />
+        <Box
+          pt="90px"
+          bgImage="url('images/background.jpg')"
+          bgSize="cover"
+          bgRepeat="no-repeat"
+          bgAttachment="fixed"
+          width="100%"
+          minHeight="100vh"
+        >
+          <Box bg={`rgba(20, 29, 40, 0.8)`} color="white"  pl="5" pr="5" ml="40" mr="40" minHeight="100vh">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/find-your-sign" element={<FindYourSign />} />
+              <Route path="/about-your-sign" element={<AboutYourSign />} />
+              <Route path="/compatibility" element={<Compatibility />} />
+            </Routes>
+          </Box>
+        </Box>
+      </Router>
+    </ChakraProvider>
   );
 }
 
