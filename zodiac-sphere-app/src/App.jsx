@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import FindYourSign from "./pages/FindYourSign";
 import AboutYourSign from "./pages/AboutYourSign";
 import Compatibility from "./pages/Compatibility";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Router>
       <Navbar />
         <Box
-          pt="90px"
+          pt={{ base: "370px", lg: "94px" }}
           bgImage="url('images/background.jpg')"
           bgSize="cover"
           bgRepeat="no-repeat"
@@ -21,7 +22,7 @@ function App() {
           width="100%"
           minHeight="100vh"
         >
-          <Box bg={`rgba(20, 29, 40, 0.8)`} color="white"  pl="5" pr="5" ml="40" mr="40" minHeight="100vh">
+          <Box bg={`rgba(20, 29, 40, 0.8)`} color="white"  pt="20px" pb="20px" pl="5" pr="5" ml="6%" mr="6%" minHeight="100vh">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/find-your-sign" element={<FindYourSign />} />
@@ -30,6 +31,7 @@ function App() {
             </Routes>
           </Box>
         </Box>
+        <Footer/>
       </Router>
     </ChakraProvider>
   );
