@@ -14,7 +14,6 @@ function App() {
       <Router>
       <Navbar />
         <Box
-          pt={{ base: "370px", lg: "94px" }}
           bgImage="url('images/background.jpg')"
           bgSize="cover"
           bgRepeat="no-repeat"

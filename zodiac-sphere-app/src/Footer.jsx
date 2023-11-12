@@ -5,9 +5,15 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <ChakraProvider>
-      <Box height="1px" bgColor="#a3abc9"></Box>
-      <Box bg="#141d39" p={3} color="white">
-        <Box>© for this Website: <b>Alex Ungureanu - {year}</b></Box>
+      <Box
+        bg="#141d39"
+        p={3}
+        color="white"
+        borderTop="2px solid #a3abc9"
+      >
+        <Box>
+          © for this Website: <b>Alex Ungureanu - {year}</b>
+        </Box>
 
         <Box>
           © for Background image: &nbsp;
