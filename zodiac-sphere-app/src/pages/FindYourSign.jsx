@@ -1,14 +1,13 @@
-import React from 'react';
-import { ChakraProvider, Box, Heading } from "@chakra-ui/react";
+import React from "react";
+import { Flex, Image, Box } from "@chakra-ui/react";
 
 const FindYourSign = () => {
+  
+
   return (
-    <Box >
-          <Heading>Find sign</Heading>
-          <Heading>Find sign</Heading>
-          <Heading>Find sign</Heading>
-          <Heading>Find sign</Heading>
-    </Box>
+    <Flex>
+    Find you sign
+    </Flex>
   );
 };
 

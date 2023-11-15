@@ -28,6 +28,7 @@ const Navbar = () => {
         position="sticky"
         width="100%"
         borderBottom="2px solid #a3abc9"
+        zIndex="1000"
       >
         <Flex direction="row" justifyContent="space-around" align="center">
           <Link to="/" onClick={toggleNavigation}>
