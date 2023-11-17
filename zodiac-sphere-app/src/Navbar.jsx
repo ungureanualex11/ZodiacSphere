@@ -16,6 +16,9 @@ const Navbar = () => {
   const toggleNavigation = () => {
     setNavigationVisibility(!navigationVisibility);
   };
+  const closeNavigation = () => {
+    setNavigationVisibility(false);
+  };
 
   return (
     <ChakraProvider>
@@ -30,129 +33,133 @@ const Navbar = () => {
         borderBottom="2px solid #a3abc9"
         zIndex="1000"
       >
-        <Flex direction="row" justifyContent="space-around" align="center">
-          <Link to="/" onClick={toggleNavigation}>
+        <Flex direction="row" justifyContent="space-between" align="center" > 
+          <Link to="/" onClick={closeNavigation}>
             <Image
               src="/images/logo.png"
               alt="Logo"
-              h="80px"
+              h={{ base: "50px", sm: "60px", md: "70px", lg: "80px" }}
               style={{ filter: "invert(1)" }}
               _hover={{
                 transform: "scale(1.14) rotate(360deg)",
                 transition: "transform 0.7s",
               }}
+              
             />
           </Link>
 
-          <Button
+          <Image
+            src={
+              navigationVisibility
+                ? "/images/hamburger_icon_close.png"
+                : "/images/hamburger_icon_open.png"
+            }
+            alt="Menu icon"
+            h={{ base: "30px",  sm: "50px"}}
             onClick={toggleNavigation}
             display={{ base: "block", lg: "none" }}
-            bgColor="#141D39"
             m="5px"
             mt="10px"
-            fontSize="xl"
-            borderWidth="2px"
-            borderColor="#a3abc9"
-            borderRadius="2xl"
-            color="#e6ebff"
             _hover={{
-              bgColor: "#141d50",
-              transform: "scale(1.1)",
+              transform: "scale(1.2)",
               transition: "transform 0.4s",
+              cursor: "pointer",
             }}
-          >
-            {navigationVisibility ? "Hide Navigation" : "Show Navigation"}
-          </Button>
+          />
         </Flex>
 
-        <Flex align="center"  direction={{ base: "column", lg: "row" }}  justifyContent="space-between" >
-        {(navigationVisibility || isLargeScreen) && (
-          <>
-            <Link to="/" onClick={toggleNavigation}>
-              <Box
-                m="5px"
-                fontSize="xl"
-                borderWidth="2px"
-                borderColor="#a3abc9"
-                borderRadius="2xl"
-                color="#e6ebff"
-                p="12px"
-                pl="25px"
-                pr="25px"
-                _hover={{
-                  bgColor: "#141d50",
-                  transform: "scale(1.1)",
-                  transition: "transform 0.4s",
-                }}
-              >
-                Home
-              </Box>
-            </Link>
+        <Flex
+          align="center"
+          direction={{ base: "column", lg: "row" }}
+          justifyContent="space-between"
+        >
+          {(navigationVisibility || isLargeScreen) && (
+            <>
+              <Link to="/" onClick={closeNavigation}>
+                <Box
+                  m="5px"
+                  fontSize={{ base: "xs", sm: "md", md: "lg" ,lg:"xl"}}
+                  borderWidth="2px"
+                  borderColor="#a3abc9"
+                  borderRadius="2xl"
+                  color="#e6ebff"
+                  p="12px"
+                  pl="25px"
+                  pr="25px"
+                  _hover={{
+                    bgColor: "#141d50",
+                    transform: "scale(1.1)",
+                    transition: "transform 0.4s",
+                  }}
+                >
+                  Home
+                </Box>
+              </Link>
 
-            <Link to="/find-your-sign" onClick={toggleNavigation}>
-              <Box
-                m="5px"
-                fontSize="xl"
-                borderWidth="2px"
-                borderColor="#a3abc9"
-                borderRadius="2xl"
-                color="#e6ebff"
-                p="12px"
-                pl="25px"
-                pr="25px"
-                _hover={{
-                  bgColor: "#141d50",
-                  transform: "scale(1.1)",
-                  transition: "transform 0.4s",
-                }}
-              >
-                Find your sign
-              </Box>
-            </Link>
+              <Link to="/find-your-sign" onClick={closeNavigation}>
+                <Box
+                  m="5px"
+                  fontSize={{ base: "xs", sm: "md", md: "lg" ,lg:"xl"}}
+                  borderWidth="2px"
+                  borderColor="#a3abc9"
+                  borderRadius="2xl"
+                  color="#e6ebff"
+                  p="12px"
+                  pl="25px"
+                  pr="25px"
+                  _hover={{
+                    bgColor: "#141d50",
+                    transform: "scale(1.1)",
+                    transition: "transform 0.4s",
+                  }}
+                >
+                  Find your sign
+                </Box>
+              </Link>
 
-            <Link to="/about-your-sign" onClick={toggleNavigation}>
-              <Box
-                m="5px"
-                fontSize="xl"
-                borderWidth="2px"
-                borderColor="#a3abc9"
-                borderRadius="2xl"
-                color="#e6ebff"
-                p="12px"
-                pl="25px"
-                pr="25px"
-                _hover={{
-                  bgColor: "#141d50",
-                  transform: "scale(1.1)",
-                  transition: "transform 0.4s",
-                }}
-              >
-                About your sign
-              </Box>
-            </Link>
+              <Link to="/about-your-sign" onClick={closeNavigation}>
+                <Box
+                  m="5px"
+                  fontSize={{ base: "xs", sm: "md", md: "lg" ,lg:"xl"}}
+                  borderWidth="2px"
+                  borderColor="#a3abc9"
+                  borderRadius="2xl"
+                  color="#e6ebff"
+                  p="12px"
+                  pl="25px"
+                  pr="25px"
+                  _hover={{
+                    bgColor: "#141d50",
+                    transform: "scale(1.1)",
+                    transition: "transform 0.4s",
+                  }}
+                >
+                  About your sign
+                </Box>
+              </Link>
 
-            <Link to="/compatibility" onClick={toggleNavigation}>
-              <Box
-                m="5px"
-                fontSize="xl"
-                borderWidth="2px"
-                borderColor="#a3abc9"
-                borderRadius="2xl"
-                color="#e6ebff"
-                p="12px"
-                pl="25px"
-                pr="25px"
-                _hover={{
-                  bgColor: "#141d50",
-                  transform: "scale(1.1)",
-                  transition: "transform 0.4s",
-                }}
-              >
-                Compatibility
-              </Box>
-            </Link>
-          </>
-        )}
+              <Link to="/compatibility" onClick={closeNavigation}>
+                <Box
+                  m="5px"
+                  fontSize={{ base: "xs", sm: "md", md: "lg" ,lg:"xl"}}
+                  borderWidth="2px"
+                  borderColor="#a3abc9"
+                  borderRadius="2xl"
+                  color="#e6ebff"
+                  p="12px"
+                  pl="25px"
+                  pr="25px"
+                  _hover={{
+                    bgColor: "#141d50",
+                    transform: "scale(1.1)",
+                    transition: "transform 0.4s",
+                  }}
+                >
+                  Compatibility
+                </Box>
+              </Link>
+            </>
+          )}
         </Flex>
       </Flex>
     </ChakraProvider>
