@@ -5,7 +5,6 @@ import {
   ChakraProvider,
   Flex,
   Image,
-  Button,
   useBreakpointValue,
 } from "@chakra-ui/react";
 
@@ -42,7 +41,7 @@ const Navbar = () => {
               style={{ filter: "invert(1)" }}
               _hover={{
                 transform: "scale(1.14) rotate(360deg)",
-                transition: "transform 0.7s",
+                transition: "transform 0.6s",
               }}
               
             />
@@ -89,7 +88,7 @@ const Navbar = () => {
                   _hover={{
                     bgColor: "#141d50",
                     transform: "scale(1.1)",
-                    transition: "transform 0.4s",
+                    transition: "transform 0.2s",
                   }}
                 >
                   Home
@@ -110,7 +109,7 @@ const Navbar = () => {
                   _hover={{
                     bgColor: "#141d50",
                     transform: "scale(1.1)",
-                    transition: "transform 0.4s",
+                    transition: "transform 0.2s",
                   }}
                 >
                   Find your sign
@@ -131,7 +130,7 @@ const Navbar = () => {
                   _hover={{
                     bgColor: "#141d50",
                     transform: "scale(1.1)",
-                    transition: "transform 0.4s",
+                    transition: "transform 0.2s",
                   }}
                 >
                   About your sign
@@ -152,7 +151,7 @@ const Navbar = () => {
                   _hover={{
                     bgColor: "#141d50",
                     transform: "scale(1.1)",
-                    transition: "transform 0.4s",
+                    transition: "transform 0.2s",
                   }}
                 >
                   Compatibility
