@@ -47,6 +47,7 @@ const Navbar = () => {
             />
           </Link>
 
+
           <Image
             src={
               navigationVisibility
